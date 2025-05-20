@@ -1,0 +1,74 @@
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* LH 1.2 -> 1.5 recommended, but not for heading */
+body {
+  line-height: 1.5;
+  font-family: "Noto-SansKR", sans-serif;
+}
+/* For macOS chrome&safari browser*/
+body {
+  /* 2012~2018 */
+  -webkit-font-smoothing: subpixel-antialiased; 
+  /* 2018+ */
+  -webkit-font-smoothing: antialiased;
+}
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Reset heading, paragraph, and button styles */
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  overflow-wrap: normal; /*unbroken string like URL may overflow container*/
+  overflow-wrap: break-word; /*long overflowing text like URL are hard wrapped(inside container)*/
+  /* word-break: use overflow-wrap instead*/
+  /* hyphens: auto; use this to indicate hard wraps*/
+}
+h1,h2,h3,h4,h5,h6{
+  /* balance for headings, makes two lines roughly same length */
+  /* supported around 80% */
+  /* text-wrap: balance; */
+}
+p{ 
+  /* pretty for paragraphs, visually balance, final line has 1-2 words */
+  /* supported around 70% */
+  /* text-wrap: pretty; */
+}
+
+/* Remove anchor default styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset images and videos */
+img, video {
+  /*max width revert returns value back to browser's default value, useful when there's explicit values */
+  max-width: revert; 
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove default button and input styles */
+button, input, textarea, select {
+  /* font-family: inherit; */
+  font: inherit; /* inherits all font properties */
+  /* border: none;
+  outline: none;
+  background: none; */
+}
+
