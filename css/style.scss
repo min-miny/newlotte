@@ -1,0 +1,167 @@
+// Lotte Renewal CSS
+body {
+  background-color: #ededed;
+}
+
+// Header CSS
+header.hdrActive {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #fefefe;
+  ul.gnbWrap {
+    a:hover {
+      transition: text-decoration 0.3s ease-in-out, text-shadow 0.3s ease-out;
+    }
+    a {
+      font-weight: 700;
+      color: #333;
+      text-shadow: none;
+      img.navLogos {
+        display: block;
+      }
+    }
+  }
+}
+
+header {
+  width: 100%;
+  height: 200px;
+  padding: 0 10px;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  position: fixed;
+  z-index: 9999;
+  transition: background-color 0.3s ease-in-out;
+  h1 {
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    margin: 0 80px;
+    img {
+      width: 60px;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    ul.gnbWrap {
+      display: flex;
+      li {
+        margin-right: 40px;
+        a:hover {
+          text-decoration: underline;
+        }
+        a {
+          font-size: 24px;
+          font-weight: 500;
+          color: #fff;
+          text-shadow: 0 0 5px black;
+          img {
+            display: block;
+            max-height: 80px;
+            margin: 0 auto;
+            margin-top: 10px;
+          }
+          .navLogos {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main CSS
+// manually add bgi to each column
+#col1 {
+  background-image: url('/img/advt_bg_col.jpg');
+}
+#col2 {
+  background-image: url('/img/advt_busan_bg_col.jpg');
+}
+#col3 {
+  background-image: url('/img/sky_bg_col.png');
+}
+#col4 {
+  background-image: url('/img/aqua_bg_col.png');
+}
+#col5 {
+  background-image: url('/img/waterpark_bg_col.png');
+}
+#col6 {
+  background-image: url('/img/aqua_hanoi_bg_col.png');
+}
+
+main {
+  section {
+    display: flex;
+
+    .column:hover .overlay {
+      // visibility: hidden;
+      opacity: 0;
+    }
+    .column:hover .content {
+      margin-top: 40vh;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+      padding: 120px 20px;
+      a:hover {
+        color: #fff;
+      }
+    }
+    .column {
+      // added background image for each column
+      position: relative;
+      background-color: #fff;
+      width: calc(100% / 6);
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      .overlay {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+      }
+      .content {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 60vh;
+        transition: margin-top 1s ease-in-out, padding 1s ease-in-out,
+          text-shadow 0.5s ease-out;
+        .text {
+          text-align: center;
+          color: white;
+          height: 160px;
+          span {
+            font-size: 24px;
+          }
+          h3 {
+            font-size: 36px;
+            line-height: 1.2;
+          }
+        }
+        .btn {
+          margin-top: 80px;
+          text-align: center;
+          a {
+            color: #ddd;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: block;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 60px;
+            width: 100%;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,34 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>롯데월드</title>
     <link rel="icon" href="img/favicon.ico" type="favicon" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- JS -->
     <script defer src="js/main.js"></script>
   </head>
   <body>
     <header>
-      <h1>Logo</h1>
+      <h1><img src="img/logo_wh.png" alt="로고" /></h1>
       <nav>
-        <ul>
-          <li><a href="#">롯데월드 어드벤쳐</a></li>
-          <li><a href="#">롯데월드 어드벤쳐 부산</a></li>
-          <li><a href="#">서울 스카이</a></li>
-          <li><a href="#">롯데월드 아쿠아리움</a></li>
-          <li><a href="#">롯데 워터파크</a></li>
-          <li><a href="#">롯데월드 아쿠아리움 하노이</a></li>
+        <ul class="gnbWrap">
+          <!-- JS 로 이미지 바꿔주기 -->
+          <li>
+            <a href="#"
+              >롯데월드 어드벤쳐
+              <img
+                class="navLogos"
+                src="img/advt_logo_blk.png"
+                alt="어드벤쳐 로고"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              >롯데월드 어드벤쳐 부산
+              <img
+                class="navLogos"
+                src="img/advt_busan_logo_blk.png"
+                alt="어드벤쳐 부산 로고"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              >서울 스카이
+              <img
+                class="navLogos"
+                src="img/sky_logo_blk.png"
+                alt="서울 스카이 로고"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              >롯데월드 아쿠아리움
+              <img
+                class="navLogos"
+                src="img/aqua_logo_blk.png"
+                alt="아쿠아리움 로고"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              >롯데 워터파크
+              <img
+                class="navLogos"
+                src="img/waterpark_logo_blk.png"
+                alt="워터파크 로고"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              >롯데월드 아쿠아리움 하노이
+              <img
+                class="navLogos"
+                src="img/aqua_hanoi_logo_blk.png"
+                alt="아쿠아리움 하노이 로고"
+            /></a>
+          </li>
         </ul>
       </nav>
     </header>
     <main>
       <section>
-        <div>column1</div>
-        <div>column2</div>
-        <div>column3</div>
-        <div>column4</div>
-        <div>column5</div>
-        <div>column6</div>
+        <div id="col1" class="column">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="text">
+              <span>모험과 신비의 나라</span>
+              <h3>롯데월드 어드벤쳐</h3>
+            </div>
+            <div class="btn">
+              <a href="#">온라인 예약 바로가기 ></a>
+            </div>
+          </div>
+        </div>
+        <div id="col2" class="column">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="text">
+              <span>모험과 신비의 나라</span>
+              <h3>롯데월드 어드벤쳐 부산</h3>
+            </div>
+            <div class="btn">
+              <a href="#">온라인 예약 바로가기 ></a>
+            </div>
+          </div>
+        </div>
+        <div id="col3" class="column">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="text">
+              <span>하늘 위에 새로운 세상</span>
+              <h3>롯데월드 전망대 SEOUL SKY</h3>
+            </div>
+            <div class="btn">
+              <a href="#">온라인 예약 바로가기 ></a>
+            </div>
+          </div>
+        </div>
+        <div id="col4" class="column">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="text">
+              <span>사람과 자연이 함께 꿈꾸는 바다</span>
+              <h3>롯데월드 아쿠아리움</h3>
+            </div>
+            <div class="btn">
+              <a href="#">온라인 예약 바로가기 ></a>
+            </div>
+          </div>
+        </div>
+        <div id="col5" class="column">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="text">
+              <span>신나는 물의 세계</span>
+              <h3>김해 롯데 워터파크</h3>
+            </div>
+            <div class="btn">
+              <a href="#">온라인 예약 바로가기 ></a>
+            </div>
+          </div>
+        </div>
+        <div id="col6" class="column">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="text">
+              <span>모험과 신비의 나라</span>
+              <h3>롯데월드 어드벤쳐</h3>
+            </div>
+            <div class="btn">
+              <a href="#">온라인 예약 바로가기 ></a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </body>

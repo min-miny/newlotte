@@ -15,34 +15,48 @@ html {
 /* LH 1.2 -> 1.5 recommended, but not for heading */
 body {
   line-height: 1.5;
-  font-family: "Noto-SansKR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 /* For macOS chrome&safari browser*/
 body {
   /* 2012~2018 */
-  -webkit-font-smoothing: subpixel-antialiased; 
+  -webkit-font-smoothing: subpixel-antialiased;
   /* 2018+ */
   -webkit-font-smoothing: antialiased;
 }
 /* Remove default list styles */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* Reset heading, paragraph, and button styles */
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-weight: normal;
   overflow-wrap: normal; /*unbroken string like URL may overflow container*/
   overflow-wrap: break-word; /*long overflowing text like URL are hard wrapped(inside container)*/
   /* word-break: use overflow-wrap instead*/
   /* hyphens: auto; use this to indicate hard wraps*/
 }
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
   /* balance for headings, makes two lines roughly same length */
   /* supported around 80% */
   /* text-wrap: balance; */
 }
-p{ 
+p {
+  font-weight: 300;
   /* pretty for paragraphs, visually balance, final line has 1-2 words */
   /* supported around 70% */
   /* text-wrap: pretty; */
@@ -55,20 +69,22 @@ a {
 }
 
 /* Reset images and videos */
-img, video {
+img,
+video {
   /*max width revert returns value back to browser's default value, useful when there's explicit values */
-  max-width: revert; 
+  max-width: revert;
   max-width: 100%;
   display: block;
 }
 
-
 /* Remove default button and input styles */
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   /* font-family: inherit; */
   font: inherit; /* inherits all font properties */
-  /* border: none;
-  outline: none;
+  /* border: none; */
+  /* outline: none;
   background: none; */
 }
-
