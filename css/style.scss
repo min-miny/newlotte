@@ -1,4 +1,6 @@
 // Lotte Renewal CSS
+// Breakpoints
+// - Desktop
 body {
   background-color: #ededed;
 }
@@ -22,6 +24,9 @@ header.hdrActive {
   }
 }
 
+header:hover nav li {
+  text-align: center;
+}
 header {
   width: 100%;
   height: 200px;
@@ -29,6 +34,8 @@ header {
   display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
   position: fixed;
+  justify-content: space-between;
+  align-items: center;
   z-index: 9999;
   transition: background-color 0.3s ease-in-out;
   h1 {
@@ -47,14 +54,17 @@ header {
       display: flex;
       li {
         margin-right: 40px;
+        text-align: center;
         a:hover {
           text-decoration: underline;
+          text-underline-offset: 3px;
         }
         a {
           font-size: 24px;
           font-weight: 500;
           color: #fff;
           text-shadow: 0 0 5px black;
+          word-break: keep-all;
           img {
             display: block;
             max-height: 80px;
@@ -92,6 +102,37 @@ header {
 }
 
 main {
+  // Slider Buttons for <= 1024px screens
+  position: relative;
+  .prev {
+    left: 0;
+  }
+  .prev:hover,
+  .next:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .next {
+    right: 0;
+  }
+  // button visible at < 1024px
+  .slideBtn {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    width: 5rem;
+    height: 100%;
+    line-height: 100vh;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 1;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px black;
+    background: rgba(111, 111, 111, 0.15);
+    transition: background-color 0.3s ease-in-out;
+  }
+
   section {
     display: flex;
 
@@ -102,7 +143,6 @@ main {
     .column:hover .content {
       margin-top: 40vh;
       text-shadow: 0 0 10px rgba(0, 0, 0, 1);
-      padding: 120px 20px;
       a:hover {
         color: #fff;
       }
@@ -116,6 +156,8 @@ main {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      overflow-y: hidden;
+      // Overlay - dim background
       .overlay {
         z-index: 1;
         content: '';
@@ -130,8 +172,8 @@ main {
       }
       .content {
         width: 100%;
-        padding: 0 20px;
-        margin-top: 60vh;
+        padding: 0 10px;
+        margin-top: 50vh;
         transition: margin-top 1s ease-in-out, padding 1s ease-in-out,
           text-shadow 0.5s ease-out;
         .text {
@@ -140,10 +182,12 @@ main {
           height: 160px;
           span {
             font-size: 24px;
+            word-break: keep-all;
           }
           h3 {
-            font-size: 36px;
+            font-size: 32px;
             line-height: 1.2;
+            word-break: keep-all;
           }
         }
         .btn {
@@ -154,7 +198,7 @@ main {
             background-color: rgba(0, 0, 0, 0.3);
             display: block;
             border-radius: 10px;
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 500;
             line-height: 60px;
             width: 100%;
@@ -164,4 +208,162 @@ main {
       }
     }
   }
+}
+
+// 반응형 브레이크 포인트
+// 노트북 및 큰 태블릿
+@media screen and (max-width: 1280px) {
+  // w1280 Header
+  header.hdrActive {
+    background-color: rgba(255, 255, 255, 0.8);
+    #hamburger {
+      span {
+        background-color: #000;
+      }
+    }
+    nav {
+      ul.gnbWrap {
+        a {
+          img.navLogos {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  #hamburger {
+    min-width: 30px;
+    height: 30px;
+    margin: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 100%;
+      height: 5px;
+      background-color: #fff;
+    }
+  }
+  header {
+    height: 60px;
+    h1 {
+      width: 30px;
+      min-width: 30px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      margin: 0 40px;
+      img {
+        width: 100%;
+      }
+    }
+    nav.navActive {
+      // visibility: visible;
+      opacity: 1;
+      max-height: 500px;
+    }
+    nav {
+      position: absolute;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      // height: 500px;
+      max-height: 0;
+      height: 500px;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      // visibility: hidden;
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      ul.gnbWrap {
+        margin: 0 auto;
+        li {
+          a:hover {
+          }
+          a {
+            font-size: 18px;
+            word-break: keep-all;
+            img {
+            }
+            .navLogos {
+            }
+          }
+        }
+      }
+    }
+  }
+  main {
+    section {
+      .column:hover .content {
+        padding-top: 10%;
+      }
+      .column {
+        .content {
+          width: 100%;
+          padding: 0 10px;
+          margin-top: 50vh;
+          .text {
+            span {
+              font-size: 16px; //smaller font
+              height: 80px;
+            }
+            h3 {
+              font-size: 24px; //smaller font
+              margin-top: 20px;
+            }
+          }
+          .btn {
+            margin-top: 20px;
+            a {
+              font-size: 14px;
+              line-height: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 큰 모바일 및 태블릿
+@media screen and (max-width: 1024px) {
+  main {
+    overflow: hidden;
+    .slideBtn {
+      visibility: visible;
+    }
+    section {
+      width: 200%;
+      transition: transform 0.5s ease-in-out;
+      .column {
+        width: calc(100% / 6);
+        .content {
+          .text {
+            span {
+              font-size: 16px; //smaller font
+              height: 80px;
+            }
+            h3 {
+              font-size: 24px; //smaller font
+              margin-top: 20px;
+            }
+          }
+          .btn {
+            margin-top: 20px;
+            a {
+              font-size: 14px;
+              line-height: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 모바일
+@media screen and (max-width: 480px) {
 }

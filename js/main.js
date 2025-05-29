@@ -34,6 +34,7 @@ hdrEl.addEventListener('mouseover', () => {
 hdrEl.addEventListener('mouseleave', () => {
   hdrEl.classList.remove('hdrActive');
   hdrLogo.src = 'img/logo_wh.png';
+  nav.classList.remove('navActive');
 });
 
 // MainSection DOM ================================
@@ -44,3 +45,30 @@ console.log(allColumn);
 //     col.classList.add("colActive")
 //   })
 // })
+
+// Responsive : navActive
+let nav = document.querySelector('nav');
+let hamburger = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('navActive');
+});
+
+// Carousel
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const section = document.querySelector('section');
+
+nextBtn.addEventListener('click', () => {
+  section.style.transform = 'translateX(-50%)';
+});
+
+prevBtn.addEventListener('click', () => {
+  section.style.transform = 'translateX(0%)';
+});
+// Listen for screen size changes
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1024) {
+    section.style.transform = 'translateX(0%)';
+  }
+});
